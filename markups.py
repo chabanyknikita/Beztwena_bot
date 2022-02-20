@@ -1,11 +1,12 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, \
+    ReplyKeyboardRemove
 
 # --- Main menu ---
-
+remove_markup = ReplyKeyboardRemove()
 
 btnInfo = KeyboardButton('Індивідуальна программа для схудення')
 btnMore = KeyboardButton('Індивідуальна программа для набору маси')
-mainMenu = ReplyKeyboardMarkup(resize_keyboard=True)
+mainMenu = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
 mainMenu.add(btnInfo)
 mainMenu.add(btnMore)
 
@@ -25,7 +26,6 @@ btnPosRev = InlineKeyboardButton(text="Посилання на канал", url=
 
 Pos_inline_markup.insert(btnPosRev)
 
-
 # --- Набір Inline Buttons ---
 More_inline_markup = InlineKeyboardMarkup(row_width=1)
 
@@ -40,4 +40,3 @@ Gyp_inline_markup = InlineKeyboardMarkup(row_width=1)
 btnGypRev = InlineKeyboardButton(text="Посилання на канал", url="https://t.me/+jrdSGEtEjLQ1MTEy")
 
 Gyp_inline_markup.insert(btnGypRev)
-
